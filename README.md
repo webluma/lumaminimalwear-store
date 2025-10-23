@@ -79,30 +79,6 @@
 - ✅ Touch-friendly interfaces
 - ✅ Performance em dispositivos móveis
 
-## 🎨 Design System
-
-### Paleta de Cores
-
-- **Primária:** Cinza escuro (#111827)
-- **Secundária:** Cinza claro (#F9FAFB)
-- **Acentos:** Preto (#000000)
-- **Texto:** Escala de cinzas
-
-### Tipografia
-
-- **Headings:** Font-weight 300-700
-- **Body:** Font-weight 400-500
-- **Responsiva:** Escalas de 12px a 48px
-
-### Componentes
-
-- **Cards de Produto** - Layout consistente
-- **Botões** - Estados hover e active
-- **Formulários** - Validação visual
-- **Modais** - Overlays elegantes
-
-## 🔧 Instalação e Desenvolvimento
-
 ### Pré-requisitos
 
 ```bash
@@ -138,13 +114,6 @@ NEXT_PUBLIC_BASE_URL=http://localhost:3000
 ```
 
 ## 📊 Performance
-
-### Métricas Otimizadas
-
-- **Lighthouse Score:** 95+ em todas as categorias
-- **First Contentful Paint:** < 1.5s
-- **Largest Contentful Paint:** < 2.5s
-- **Cumulative Layout Shift:** < 0.1
 
 ### Otimizações Implementadas
 
@@ -211,14 +180,6 @@ Este é um projeto de demonstração, mas sugestões são bem-vindas!
 ## 📄 Licença
 
 Este projeto é de demonstração e está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## 👨‍💻 Desenvolvedor
-
-**Gabriel Lamsa**
-
-- 🌐 [Portfolio](https://gabriellamsa.dev)
-- 💼 [LinkedIn](https://linkedin.com/in/gabriellamsa)
-- 📧 [Email](mailto:contato@gabriellamsa.dev)
 
 ---
 
