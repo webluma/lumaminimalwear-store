@@ -108,7 +108,7 @@ export default function Header() {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   onFocus={() => setIsSearchOpen(true)}
-                  className="w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent text-sm"
+                  className="w-48 lg:w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent text-sm"
                 />
               </div>
             </div>
@@ -146,7 +146,17 @@ export default function Header() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="md:hidden flex items-center space-x-1">
+            {/* Mobile Search */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setIsSearchOpen(!isSearchOpen)}
+              className="p-2 text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              <Search size={20} />
+            </motion.button>
+
             <Link href="/favorites">
               <motion.button
                 whileHover={{ scale: 1.1 }}
@@ -206,29 +216,33 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
-              <div className="flex items-center space-x-4 pt-4 border-t border-gray-200">
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setIsSearchOpen(!isSearchOpen)}
-                  className="p-2 text-gray-700 hover:text-gray-900 transition-colors"
-                >
-                  <Search size={20} />
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-2 text-gray-700 hover:text-gray-900 transition-colors relative"
-                >
-                  <Heart size={20} />
-                  {favorites.length > 0 && (
-                    <span className="absolute -top-1 -right-1 bg-gray-900 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                      {favorites.length}
-                    </span>
-                  )}
-                </motion.button>
-              </div>
             </nav>
+          </motion.div>
+        )}
+
+        {/* Mobile Search Overlay */}
+        {isSearchOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="md:hidden border-t border-gray-200 py-4 bg-white"
+          >
+            <div className="relative px-4">
+              <div className="relative">
+                <Search
+                  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                  size={18}
+                />
+                <input
+                  type="text"
+                  placeholder="Buscar produtos..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent text-sm"
+                />
+              </div>
+            </div>
           </motion.div>
         )}
 
@@ -259,7 +273,7 @@ export default function Header() {
                         Ver todos os resultados
                       </Link>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 md:gap-4">
                       {searchResults.map((product) => (
                         <Link
                           key={product.id}

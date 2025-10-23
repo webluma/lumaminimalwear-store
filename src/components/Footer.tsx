@@ -44,8 +44,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8">
           {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -54,25 +54,25 @@ export default function Footer() {
             viewport={{ once: true }}
             className="lg:col-span-1"
           >
-            <h3 className="text-2xl font-bold mb-4">MinimalWear</h3>
-            <p className="text-gray-400 mb-6 leading-relaxed">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">MinimalWear</h3>
+            <p className="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6 leading-relaxed">
               Acessórios minimalistas atemporais para a mulher moderna. Bolsas,
               carteiras e óculos de sol com design limpo, materiais premium e
               estilo sem esforço.
             </p>
 
             {/* Contact Info */}
-            <div className="space-y-2 text-sm text-gray-400">
+            <div className="space-y-2 text-xs sm:text-sm text-gray-400">
               <div className="flex items-center gap-2">
-                <Mail size={16} />
+                <Mail size={14} className="sm:w-4 sm:h-4" />
                 <span>hello@minimalwear.com</span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone size={16} />
+                <Phone size={14} className="sm:w-4 sm:h-4" />
                 <span>+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin size={16} />
+                <MapPin size={14} className="sm:w-4 sm:h-4" />
                 <span>São Paulo, SP</span>
               </div>
             </div>
@@ -85,13 +85,13 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-4">Loja</h4>
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Loja</h4>
             <ul className="space-y-2">
               {footerLinks.shop.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -107,13 +107,13 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-4">Empresa</h4>
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Empresa</h4>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -129,13 +129,13 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-4">Suporte</h4>
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Suporte</h4>
             <ul className="space-y-2">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -151,13 +151,13 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-4">Legal</h4>
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Legal</h4>
             <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -176,21 +176,21 @@ export default function Footer() {
           className="border-t border-gray-800 mt-12 pt-8"
         >
           <div className="max-w-md">
-            <h4 className="text-lg font-semibold mb-2">Fique Atualizado</h4>
-            <p className="text-gray-400 mb-4">
+            <h4 className="text-base sm:text-lg font-semibold mb-2">Fique Atualizado</h4>
+            <p className="text-sm sm:text-base text-gray-400 mb-4">
               Inscreva-se em nossa newsletter para as últimas atualizações e
               ofertas exclusivas.
             </p>
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-2">
               <input
                 type="email"
                 placeholder="Digite seu email"
-                className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent text-white placeholder-gray-400"
+                className="flex-1 px-3 sm:px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent text-white placeholder-gray-400 text-sm sm:text-base"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-gray-900 px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+                className="bg-white text-gray-900 px-4 sm:px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors text-sm sm:text-base"
               >
                 Inscrever
               </motion.button>
@@ -204,21 +204,21 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
-          className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
+          className="border-t border-gray-800 mt-6 sm:mt-8 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center"
         >
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-400 text-xs sm:text-sm">
             © {currentYear} MinimalWear. All rights reserved.
           </p>
 
           {/* Social Links */}
-          <div className="flex items-center gap-4 mt-4 md:mt-0">
+          <div className="flex items-center gap-3 sm:gap-4 mt-4 sm:mt-0">
             <motion.a
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               href="#"
               className="text-gray-400 hover:text-white transition-colors"
             >
-              <Instagram size={20} />
+              <Instagram size={18} className="sm:w-5 sm:h-5" />
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.1 }}
@@ -226,7 +226,7 @@ export default function Footer() {
               href="#"
               className="text-gray-400 hover:text-white transition-colors"
             >
-              <Twitter size={20} />
+              <Twitter size={18} className="sm:w-5 sm:h-5" />
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.1 }}
@@ -234,7 +234,7 @@ export default function Footer() {
               href="#"
               className="text-gray-400 hover:text-white transition-colors"
             >
-              <Facebook size={20} />
+              <Facebook size={18} className="sm:w-5 sm:h-5" />
             </motion.a>
           </div>
         </motion.div>

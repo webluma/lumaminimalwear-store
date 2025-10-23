@@ -115,42 +115,34 @@ export default function ProductCard({ product, index }: ProductCardProps) {
       </Link>
 
       {/* Product Info */}
-      <div className="p-4">
-        <div className="flex items-center justify-between mb-2">
-          <h3 className="text-lg font-medium text-gray-900">{product.name}</h3>
-          <span className="text-lg font-semibold text-gray-900">
+      <div className="p-3 sm:p-4">
+        <div className="flex items-start justify-between mb-2">
+          <h3 className="text-sm sm:text-lg font-medium text-gray-900 flex-1 mr-2">{product.name}</h3>
+          <span className="text-sm sm:text-lg font-semibold text-gray-900 flex-shrink-0">
             {formatPrice(product.price)}
           </span>
         </div>
 
-        <p className="text-sm text-gray-600 mb-2 line-clamp-2">
+        <p className="text-xs sm:text-sm text-gray-600 mb-2 line-clamp-2">
           {product.description}
         </p>
 
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 sm:gap-2">
             {[...Array(5)].map((_, i) => (
               <Star
                 key={i}
-                size={14}
+                size={12}
                 className="text-yellow-400 fill-current"
               />
             ))}
-            <span className="text-sm text-gray-500">(4.8)</span>
+            <span className="text-xs sm:text-sm text-gray-500">(4.8)</span>
           </div>
         </div>
       </div>
 
-      {/* Quick Add Button */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{
-          opacity: hoveredProduct === product.id ? 1 : 0,
-          y: hoveredProduct === product.id ? 0 : 20,
-        }}
-        transition={{ duration: 0.3 }}
-        className="p-4 border-t border-gray-100"
-      >
+      {/* Add to Cart Button - Always Visible */}
+      <div className="p-3 sm:p-4 border-t border-gray-100">
         <motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
@@ -158,12 +150,12 @@ export default function ProductCard({ product, index }: ProductCardProps) {
             e.stopPropagation();
             handleQuickAdd(product);
           }}
-          className="w-full bg-gray-900 text-white py-3 px-4 rounded-lg font-medium hover:bg-gray-800 transition-colors flex items-center justify-center gap-2"
+          className="w-full bg-gray-900 text-white py-2 sm:py-3 px-3 sm:px-4 rounded-lg font-medium hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 text-sm sm:text-base"
         >
-          <ShoppingBag size={16} />
-          Adicionar Rápido
+          <ShoppingBag size={14} className="sm:w-4 sm:h-4" />
+          <span>ADICIONAR AO CARRINHO</span>
         </motion.button>
-      </motion.div>
+      </div>
     </motion.div>
   );
 }
